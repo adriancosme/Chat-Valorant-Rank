@@ -12,13 +12,14 @@ app.get('/', (req, res) => {
 	res.send('Stop snooping around >.>');
 });
 
-app.get('/valorant/:name/:tag', async (req, res, next) => {
+app.get('/valorant/:region/:name/:tag', async (req, res, next) => {
+	const region = req.params.region;
 	const name = req.params.name;
-	const tag = req.params.tag;
+	const tag = req.params.tag;	
 
 	const mmr_data = await vapi.getMMR({
 		version: 'v1',
-		region: 'ap',
+		region: region,
 		name: name,
 		tag: tag,
 	});
