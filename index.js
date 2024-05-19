@@ -29,7 +29,7 @@ app.get('/valorant/:name/:tag', async (req, res, next) => {
 
 	// console.log(`[${mmr_data.data.currenttierpatched}] - ${mmr_data.data.ranking_in_tier} RR`);
 	// console.log(`${name}#${tag}`);
-	res.send(`${name}#${tag} [${mmr_data.data.currenttierpatched}] - ${mmr_data.data.ranking_in_tier} RR`);
+	res.send(`${mmr_data.data.currenttierpatched} - ${mmr_data.data.ranking_in_tier} RR`);
 	myConsole.log(`${name}#${tag} [${mmr_data.data.currenttierpatched}] - ${mmr_data.data.ranking_in_tier} RR`);
 });
 
