@@ -21,6 +21,9 @@ app.get('/valorant/:name/:tag', async (req, res, next) => {
 		region: 'ap',
 		name: name,
 		tag: tag,
+		filter: {
+			api_key: process.env.API_KEY
+		}
 	});
 	if (mmr_data.error)	{
 		res.send(`Error ${mmr_data.status}`);
